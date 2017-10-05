@@ -1,0 +1,167 @@
+<html lang="es">
+
+
+
+<style>
+#formullog
+{
+ padding-left: 950px;
+ 
+height: 50px;
+top: 100px;
+
+
+
+}
+#nombre,#correo,#contraseña{
+padding-bottom: 40px;
+
+}
+
+h2{
+padding-top: 220px;
+padding-left: 600px;
+width: 50%;
+height: 10px;
+}
+
+</style>
+<header>
+
+        <h2 class="logo"id="logo">LOGO</h2>
+
+
+        <div id ="formullog"class="ui middle aligned right aligned grid  float  center">
+
+    <form class="ui large form">
+        <div class="ui stacked segment" >
+
+
+          <div class="field"   style="display:inline;">
+            <div class="ui left icon input">
+              <i class="user icon"></i>
+              <input type="text" name="email" placeholder="E-mail address"  style="display:inline;">
+            </div>
+          </div>
+
+
+          <div class="field" >
+            <div class="ui left icon input">
+              <i class="lock icon"></i>
+              <input type="password" name="password" placeholder="Password">
+            </div>
+          </div>
+
+
+
+
+          <div class="ui fluid large teal submit button">Login</div>
+        </div>
+  
+        <div class="ui error message"></div>
+  
+      </form>
+  
+      <div class="ui message">
+        New to us? <a href="#">Sign Up</a>
+      </div>
+
+</div>
+</header>
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery.serializejson.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="Semantic/semantic.min.css">
+        <script
+          src="https://code.jquery.com/jquery-3.1.1.min.js"
+          integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+          crossorigin="anonymous"></script>
+        <script src="semantic/dist/Semantic.min.js"></script>
+       
+        <title>Mi primer blog</title>
+        
+    <header>
+
+   
+
+
+    </header>
+
+
+
+    <body>
+        <div class="ui middle aligned center aligned grid" style=" height:575px;  padding-top:150px;" >
+           
+            <div class="ui stacked segment"  id=formulario   style="width:500px;  height:600pxS">
+            <form id="myform"  method="post" class="ui form" >
+
+                    <div class="field"  id="nombre">
+                            <label>nombre</label>
+                            <input type="text" name="nombre" required="true" placeholder="Su nombre"><br>
+                          </div>
+               
+                   
+                    
+                              <div class="field" id="correo">
+                                    <label>correo</label>
+                                    <input type="email" name="correo" required="true" placeholder="Su correo"><br>
+                                  </div>
+
+                                  <div class="field"   id="contraseña">
+                                        <label>contraseña</label>
+                                        <input type="password" name="contrasenia" required="true" placeholder="Contraseña"><br>
+                                      </div>
+
+            
+                                       
+                                    
+                               
+             
+              
+                <button id="boton"  class="ui button" onclick="serializar()" >terminado</button>
+            </form>
+   </div>
+</div>
+            
+            <script>
+                function serializar()
+                {
+                    
+                        var text = "";
+                        
+                        
+                        if($('#cheq').is(':checked')) {
+                            text = $('#myform').serializeJSON();
+                            if (text.nombre == "" || text.telefono == "" || text.correo == "" || text.contrasenia == "" ) 
+                            {
+                                alert("Por favor, llene los campos obligatorios");
+                        
+                            }
+                            else
+                            {
+                                console.log(text);
+                                alert(text.nombre+"\n"+text.telefono+"\n"+text.correo+"\n"+text.contrasenia+"\n");   
+                                
+                            }
+                        } else {
+                            alert("Por favor, acepte los términos");
+                        }
+                        
+                   
+                }
+            </script>
+        </div>
+    </body>
+<footer>
+
+
+
+    
+</footer>
+
+
+
+
+</html>
