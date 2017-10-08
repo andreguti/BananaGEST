@@ -1,0 +1,77 @@
+.navbar
+{
+    border: 4px solid #546a7b;
+}
+#header
+{
+    border: 2px solid red;
+    width: 100%;
+    height: 91px;
+}
+
+.fa-home, .fa-plus-square, .fa-user
+{
+    color: #546a7b;
+}
+.fa-home
+{
+    margin-left: 26px;
+}
+#buscar
+{
+    margin-left: 164px;
+    border-radius: 5px;
+    width: 293px;
+    height: 43px;
+}
+#logo
+{
+    margin-left: 170px;
+    
+}
+.fa-plus-square
+{
+    margin-left: 250px;
+}
+.buscar
+{
+    border-radius: 20px;
+    width:300px;
+    margin-left: 164px;
+    
+}
+#agregar
+{
+    border: 3px solid #99a534;
+    width: 608px;
+    height: 376px;
+    margin-left: 400px;
+    margin-top: 150px;
+}
+.fa-plus-circle
+{
+    color: #62929e;
+    margin-left: 260px;
+}
+#agregar p
+{
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 36px;
+    text-align: center;
+    margin-top: 60px;
+}
+#mostrar_1
+{
+    border: 3px solid #99a534;
+    width: 359px;
+    height: 184px;
+    margin-left: 200px;
+    margin-top: 80px;
+}
+#mostrar_1 p
+{
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 36px;
+    text-align: center;
+    margin-top: 60px;
+}
