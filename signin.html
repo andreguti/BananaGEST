@@ -1,0 +1,212 @@
+<html lang="es">
+
+
+
+<style>
+#formullog
+{
+
+ 
+height: 50px;
+top: 100px;
+width: 500px;
+
+
+}
+#nombre,#correo,#contraseña{
+padding-bottom: 10px;
+width: 700px;
+padding-left: 100px;
+padding-right: 200px;
+
+}
+
+h2{
+
+
+
+height: 20px;
+}
+
+#boton{
+border-radius: 0;
+background-color  :#99a534;
+margin-left:420px;
+
+}
+#boton2{
+border-radius: 0;
+background-color  :#99a534;
+width: 100px;
+height:   40px;
+padding-right: 30px;
+margin-top: 30px;
+
+}
+
+
+header{
+
+border: blue;
+border-width: 5px;
+}
+header>div{
+
+padding-right: 20px;
+
+}
+#contraseña2{
+padding-left: 15px;
+padding-right: 100px;
+padding-top: 30px;
+
+}
+
+#correo2
+{
+    padding-left: 300px;
+    padding-top: 30px;
+}
+
+</style>
+
+
+
+<header>
+
+        
+
+          <!--   aqui va el logotipo  -->
+        <div id ="formullog"class="ui large aligned right aligned grid  float  center" style="width:1800px;">
+            
+    <form class="ui large form" style="width:1800px;">
+        <div class="ui stacked segment  right menu"   style="height:120px;">
+
+                <h2 class="logo"id="logo">LOGO</h2>   <!--   aqui va el logotipo  -->
+          <div class="field"   id="correo2">
+            <div class="ui left icon input">
+              <i class="user icon"></i>
+              <input type="text" name="email" placeholder="E-mail address" style="width:300px">
+            </div>
+          </div>
+
+
+          <div class="field" id="contraseña2" >
+            <div class="ui left icon input">
+              <i class="lock icon"></i>
+              <input type="password" name="password" placeholder="Password"  style="width:300px">
+            </div>
+          </div>
+
+
+
+
+          <button  id="boton2" class="ui    large teal right  button ">ingresar</button>
+
+          
+        </div>
+  
+    
+  
+      </form>
+  
+  
+
+</div>
+</header>
+
+
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery.serializejson.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="Semantic/semantic.min.css">
+        <script
+          src="https://code.jquery.com/jquery-3.1.1.min.js"
+          integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+          crossorigin="anonymous"></script>
+        <script src="semantic/dist/Semantic.min.js"></script>
+       
+        <title>Mi primer blog</title>
+        
+    <header>
+
+   
+
+
+    </header>
+
+
+
+    <body>
+        <div class="ui middle aligned center aligned grid" style=" height:575px;  padding-top:250px; "  >
+           
+            <div class="ui stacked segment"  id=formulario   style="width:600px;  height:320px">
+            <form id="myform"  method="post" class="ui form"   >
+
+                    <div class="field"  id="nombre">
+                            <label>usuario</label>
+                            <input type="text" name="nombre" required="true" placeholder="Su nombre"><br>
+                          </div>
+               
+                   
+                    
+                              <div class="field" id="correo">
+                                    <label>correo</label>
+                                    <input type="email" name="correo" required="true" placeholder="Su correo"><br>
+                                  </div>
+
+                                  <div class="field"   id="contraseña">
+                                        <label>contraseña</label>
+                                        <input type="password" name="contrasenia" required="true" placeholder="Contraseña"><br>
+                                      </div>
+
+                               
+             
+              
+                <button id="boton"  class="ui positive button" onclick="serializar()"  >enviar</button>
+            </form>
+   </div>
+</div>
+            #99a534;h
+            <script>
+                function serializar()
+                {
+                    
+                        var text = "";
+                        
+                        
+                        if($('#cheq').is(':checked')) {
+                            text = $('#myform').serializeJSON();
+                            if (text.nombre == "" || text.telefono == "" || text.correo == "" || text.contrasenia == "" ) 
+                            {
+                                alert("Por favor, llene los campos obligatorios");
+                        
+                            }
+                            else
+                            {
+                                console.log(text);
+                                alert(text.nombre+"\n"+text.telefono+"\n"+text.correo+"\n"+text.contrasenia+"\n");   
+                                
+                            }
+                        } else {
+                            alert("Por favor, acepte los términos");
+                        }
+                        
+                   
+                }
+            </script>
+        </div>
+    </body>
+<footer>
+
+
+
+    
+</footer>
+
+
+
+
+</html>
