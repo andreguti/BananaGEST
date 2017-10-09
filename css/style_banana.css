@@ -40,38 +40,3 @@
     margin-left: 164px;
     
 }
-#agregar
-{
-    border: 3px solid #99a534;
-    width: 608px;
-    height: 376px;
-    margin-left: 400px;
-    margin-top: 150px;
-}
-.fa-plus-circle
-{
-    color: #62929e;
-    margin-left: 260px;
-}
-#agregar p
-{
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 36px;
-    text-align: center;
-    margin-top: 60px;
-}
-#mostrar_1
-{
-    border: 3px solid #99a534;
-    width: 359px;
-    height: 184px;
-    margin-left: 200px;
-    margin-top: 80px;
-}
-#mostrar_1 p
-{
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 36px;
-    text-align: center;
-    margin-top: 60px;
-}
