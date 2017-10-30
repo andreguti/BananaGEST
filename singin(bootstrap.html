@@ -4,22 +4,10 @@
 
 <style>
 
-h2{
-
-
-width: 20%;
-height: 10px;
+#banner{
+width: 1000px;
 }
 
-
-#contenedor
-
-{
-
-height: 100px;
-padding-bottom: 80px;
-
-}
 
 /*   cambio   de  color   de los  botones  */
 .btn.btn-primary    
@@ -27,49 +15,44 @@ padding-bottom: 80px;
     background-color  :#99a534;
     padding-right: 50px;
     
-
-       
+     
 }
 
-#boton2{
-margin-left:260px;
 
-}
-#email,pass
+#email,#pass
 {
-    padding-right: 200px;
+ 
+ padding-top: 20px;
 
-    
+ padding-left: 30px;
 }
 
 #formulario
 {
-padding-bottom: 150px;
+
 padding-left: 250px;
-height:200px;
-}
-#banner
-{
+height:100px;
+
 
 }
 
-#nombre2,#correo2,#password
+
+#nombre2,#email2,#contraseña2
 
 {
-    
-    padding-right: 400px;
+  width:900px;  
+  height: 60px;  
 }
 </style>
 
     <head>
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+            
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-       
-       
-       
+            
+           
             <title>Mi primer blog</title>
     </head>    
     <header>
@@ -78,36 +61,63 @@ height:200px;
             
            
                 <!-- nombre del  formato -->      
-            <div class="container-fluid" style="background-color:white;border:2px solid #cecece;"  >  <!--login del usuario en el encabezado-->  
+            <div class="container-fluid" style="background-color:white;border:2px solid #C70E0E;"  >  <!--login del usuario en el encabezado-->  
                 
                     <div class="row">
-                            <div class="col-sm-4">
+                            <div class="col-md-1">
                                     <img src="images\logo.jpg" class="img-rounded" alt="Cinque Terre" width="100" height="80">
                             </div>
 
-                            <div class="col-sm-8" >
+                            <div class="col-md-10" >
                                     <form  class="form-inline" role="form"  id="formullog">
-                                            <div class="input-group">
+                                            
+                                            <div class="col-md-5">
 
-                                                    <label class="col-md-4 control-label" for="Name">usuario</label>  
-                                                    <div class="col-md-4">
+
+                                        <div class="input-group" id="email">
+                                                <div class="col-md-2">
+                                                    <label class=" control-label" for="Name">usuario</label>
+                                                </div>
+                                                    
+                                                 
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                                <input id="email" type="email" class="form-control" name="email" value="" placeholder="Email Address">                                        
+                                                <input  type="email" class="form-control" name="email" value="" placeholder="Email Address">                                        
+                                            
+                                            
+                                            
                                             </div>
-                        
-                                            <div class="input-group">
+                                        </div>
+                                        
 
-                                                    <label class="col-md-4 control-label" for="Name">contraseña</label> 
+                                        <div class="col-md-5">
+                                                
+                                            <div class="input-group" id ="pass">
 
-                                                    <div class="col-md-4">
+
+                                                    <div class="col-md-2">
+                                                    <label class="control-label" for="Name"  style="margin-right:30px;">contraseña</label> 
+                                                    </div>
+                                                 
+                                                    
 
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                                <input id="pass" type="password" class="form-control" name="password" value="" placeholder="Password">                                        
+                                                <input type="password" class="form-control" name="password" value="" placeholder="Password">                                        
+                                          
+                                              </div>
                                             </div>
                                            
+                                        
+                                                   
+                                            <div class="col-md-1">
+                                                    
+                                                            <div class="row">
+                                                                    <div class="col-sm-5"> </div>
+                                                                    <div class="col-sm-2"> <button id ="boton1"  type="submit" class="btn btn-primary">ingresar </button></div>
+                                                                    <div class="col-sm-5"></div>
+                                                                  </div>
+                                           
+                                      
                                             </div>
-                        
-                                            <button id ="boton1"  type="submit" class="btn btn-primary">ingresar </button>
                                         </form>
                            
                                         </div>
@@ -124,7 +134,7 @@ height:200px;
 
     <body>
 <!---  en este contenedeor  ira la imagen -->
-            <div id="contenedor2" class="container-fluid"  style="background-color:#FFFFFF; border:2px solid #cecece; ;"    >
+            <div id="contenedor2" class="container-fluid"  style="background-color:#FFFFFF; border:2px solid #3E455A; ;"    >
            
                 <div class="row"> 
                     
@@ -132,9 +142,12 @@ height:200px;
                                 
                         </div>
 
-                        <div class="col-md-6" id="banner">
-                                <img src="images\bienve.jpg" class="img-rounded" alt="Cinque Terre" style=" height:150px;width:600px;">
-                        </div>
+                        <div class="col-md-8" id="banner">
+
+                                <img src="images\bienve.jpg" class="img-rounded" >
+                         
+                        
+                            </div>
                         <div class="col-md-3">
 
 
@@ -154,8 +167,8 @@ height:200px;
                         <div class="col-md-8" id="forma">
                                 
 
-                                <div id="contenedor" class="container-fluid" style="background-color:#A33838; border:2px solid #cecece;" >
-                                        <form class="form" id="formulario"  style="background-color:white;">
+                                <div id="contenedor" class="container-fluid" >
+                                        <form class="form" id="formulario"  style="background-color:white; height :350px; border:2px solid #4F82E0;">
                                                 
                                                 
                                                 <!-- nombre del  formato  -->
@@ -163,16 +176,16 @@ height:200px;
                                                 
                                                 <!-- nombre -->
                                                 <div class="form-group" id="nombre2">
-                                                  <label class="col-md-4 control-label" for="Name">Name</label>  
+                                                  <label class="col-md-4 control-label" id  =name for="Name">Usuario</label>  
                                                   <div class="col-md-4">
-                                                  <input id="nombre2" name="Name" type="text" placeholder="" class="form-control input-md" required="">
+                                                  <input id="nombre" name="Name" type="text"  class="form-control input-md" >
                                                     
                                                   </div>
                                                 </div>
                                                 
                                                 <!--   correo -->
                                                 <div class="form-group" id="email2">
-                                                  <label class="col-md-4 control-label" for="Email ">E-Mail Address</label>  
+                                                  <label class="col-md-4 control-label" id ="correo" for="Email ">Correo</label>  
                                                   <div class="col-md-4">
                                                   <input id="correo2" name="Email " type="text" placeholder="" class="form-control input-md" required="">
                                                     
@@ -181,9 +194,9 @@ height:200px;
 
                                                    <!-- Password input-->
                                                 <div class="form-group" id="contraseña2">
-                                                        <label class="col-md-4 control-label" for="password">Password</label>
+                                                        <label class="col-md-4 control-label" for="password">Contraseña</label>
                                                         <div class="col-md-4">
-                                                          <input id="password" name="password" type="password" placeholder="" class="form-control input-md" required="">
+                                                          <input id="password" name="password"  id="contraseña2" type="password" placeholder="" class="form-control input-md" required="">
                                                           
                                                         </div>
                                                       </div>
