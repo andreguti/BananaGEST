@@ -14,15 +14,52 @@ $(document).ready(function(){//Entra hasta que la pagina se cargó
 
             if(saveAdd!="")
             {
+            	saveAdd = {"id":saveAdd};
+            	//Ajax para verificar si existe el id del miembro en la bd.
+            	  $.ajax({
+  	                url: "http://localhost:8080/Proyecto/BuscarProyecto", 
+  	                type: "POST",
+  	                //Qué espero recibir de la ruta
+  	                contentType: "application/json",
+  	                //Que tipo de datos te voy a enviar
+  	                dataType: "json",
+  	                data: JSON.stringify(saveAdd),
 
+  	                //Servlet existe y me devolvió un JSON
+  	                success: function(data, textStatus, jqXHR) {
+  	                    console.log("Si el acceso al servlet fue correcto");
+  	                    console.log(data); //data.dato
+  	                  
+  	                    if((data.id).localeCompare("error"))
+  	                    	{
+  	                    	console.log("good");
+  	  	                  var html = $("textarea#exampleFormControlTextarea2").html();
+  	  	                $("textarea#exampleFormControlTextarea2").append(
+  	  	        
+  	  	                        data.id+"\n"
+  	  	                       
+  	  	                );
+  	  	    
+  	  	                $("input#inputNombreMiembro").val("");
+  	                    	}
+  	                    else
+  	                    	{
+                    			console.log("bad");
+  	                    		alert("Id de usuario no existe");
+  	                    		$("input#inputNombreMiembro").val("");
+  	                    	}
+
+  	                    
+  	                    
+  	                },
+  	                error: function(jqXHR, textStatus, errorThrown) {
+  	                    console.log(jqXHR);
+  	                    console.log(textStatus);
+  	                    console.log(errorThrown);
+  	                }
+  	            });
             	
-	                $("textarea#exampleFormControlTextarea2").append(
-	              	        
-  	                        saveAdd+"\n"
-  	                       
-  	                );
-  	    
-  	                $("input#inputNombreMiembro").val("");
+            	
             	
 
             }

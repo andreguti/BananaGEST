@@ -40,7 +40,7 @@ public class BuscarProyecto extends HttpServlet {
 		// TODO Auto-generated method stub
 		 response.setContentType("application/json");
 			
-			String jsonResult = "{\"status\":\"error\"}";
+			String jsonResult = "{\"id\":\"error\",\"nombre\":\"unknown\"}";  //status:
 			
 			Connection con = conectarAMySQL();
 			if(con != null)
@@ -48,17 +48,13 @@ public class BuscarProyecto extends HttpServlet {
 				//System.out.println("Estoy conectado");
 				
 				JsonObject jo = JSONPost.getJsonObject(request.getReader());
-				String nombreproyecto=jo.get("nombreproyecto").getAsString();
-				String descripcion = jo.get("descripcion").getAsString();
-				String fechainicio = jo.get("fechainicio").getAsString();
-				String fechafin = jo.get("fechafin").getAsString();
-				int estado = jo.get("estado").getAsInt();
-				int miembros = jo.get("miembros").getAsInt();
+				String id=jo.get("id").getAsString();
+
 				
 				//System.out.println(id);
 				//System.out.println(contenido);
 				
-				String query = "INSERT INTO proyecto(nombreproyecto,descripcion,fechainicio,fechafin,estado,miembros) VALUES('" + nombreproyecto + "', '"+ descripcion +"', '"+ fechainicio +"', '"+fechafin+"', '"+estado+"', '"+miembros+"')";
+				String query = "select * from usuarios where id_usuario='"+id+"'";
 				System.out.println(query);
 				
 				try {
@@ -72,41 +68,21 @@ public class BuscarProyecto extends HttpServlet {
 					}*/
 					
 					//Insercion
-					stmt.executeUpdate(query);
+					//stmt.executeUpdate(query);
 					
 					
-					String queryId = "SELECT * FROM proyecto ORDER BY idproyecto DESC LIMIT 1";
+					//String queryId = "SELECT * FROM proyecto ORDER BY idproyecto DESC LIMIT 1";
 					
-					ResultSet rs = (ResultSet) stmt.executeQuery(queryId);
-					
-					int idProyecto = 0;
-					String nombreProyecto = "";
-					String descripcionProyecto = "";
-					String fechainiProyecto = "";
-					String fechafinProyecto = "";
-					int estadoProyecto = 0;
-					int miembrosProyecto = 0;
-					
-					while(rs.next())
+					ResultSet rs = (ResultSet) stmt.executeQuery(query);
+					System.out.println(rs);
+					if(rs.next())
 					{
-						idProyecto = rs.getInt("idproyecto");
-						nombreProyecto = rs.getString("nombreproyecto");
-						descripcionProyecto = rs.getString("descripcion");
-						fechainiProyecto = rs.getString("fechainicio");
-						fechafinProyecto = rs.getString("fechafin");
-						estadoProyecto = rs.getInt("estado");
-						miembrosProyecto = rs.getInt("miembros");
-					}
-					
+						String rsNombre = rs.getString("nombre");
 					 jsonResult = "{" + 
-							                "\"id\":\"" + idProyecto +"\"," +
-							                "\"nombre\":\"" + nombreProyecto +"\"," + 
-							                "\"descripcion\":\"" + descripcionProyecto +"\"," + 
-							                "\"fechainicio\":\"" + fechainiProyecto +"\"," + 
-							                "\"fechafin\":\"" + fechafinProyecto +"\"," +
-							                "\"estado\":\"" + estadoProyecto +"\"," +
-							                "\"miembros\":\"" + miembrosProyecto +"\"" +
-							                "}";
+							                "\"id\":\"" + id +"\"" + ","+
+							                "\"nombre\":\"" + rsNombre +"\"" +
+		
+							                "}";}
 					 System.out.println(jsonResult);
 					con.close();
 					
