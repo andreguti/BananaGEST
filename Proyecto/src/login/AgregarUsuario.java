@@ -88,18 +88,18 @@ public class AgregarUsuario extends HttpServlet {
 					
 					while(rs.next())
 					{
-						idUsuario = rs.getInt("idproyecto");
-						nombreUsuario = rs.getString("nombreproyecto");
-						correoUsuario = rs.getString("descripcion");
-						contrasenaUsuario = rs.getString("fechainicio");
+						idUsuario = rs.getInt("id_usuario");
+						nombreUsuario = rs.getString("nombre");
+						correoUsuario = rs.getString("correo");
+						contrasenaUsuario = rs.getString("contrasena");
 
 					}
 					
 					 jsonResult = "{" + 
 							                "\"id\":\"" + idUsuario +"\"," +
 							                "\"nombre\":\"" + nombreUsuario +"\"," + 
-							                "\"descripcion\":\"" + correoUsuario +"\"," + 
-							                "\"fechainicio\":\"" + contrasenaUsuario +
+							                "\"correo\":\"" + correoUsuario +"\"," + 
+							                "\"contrasena\":\"" + contrasenaUsuario +
 							                "}";
 					 System.out.println(jsonResult);
 					con.close();
