@@ -99,7 +99,7 @@ public class AgregarUsuario extends HttpServlet {
 							                "\"id\":\"" + idUsuario +"\"," +
 							                "\"nombre\":\"" + nombreUsuario +"\"," + 
 							                "\"correo\":\"" + correoUsuario +"\"," + 
-							                "\"contrasena\":\"" + contrasenaUsuario +
+							                "\"contrasena\":\"" + contrasenaUsuario + "\"" +
 							                "}";
 					 System.out.println(jsonResult);
 					con.close();

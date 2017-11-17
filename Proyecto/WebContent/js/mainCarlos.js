@@ -71,6 +71,7 @@ $(document)
 						error : function(jqXHR,
 								textStatus,
 								errorThrown) {
+							//console.log(data);
 							console.log(jqXHR);
 							console
 									.log(textStatus);
