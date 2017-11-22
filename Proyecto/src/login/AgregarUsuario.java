@@ -95,12 +95,14 @@ public class AgregarUsuario extends HttpServlet {
 
 					}
 					
-					 jsonResult = "{" + 
+					 /*jsonResult = "{" + 
 							                "\"id\":\"" + idUsuario +"\"," +
 							                "\"nombre\":\"" + nombreUsuario +"\"," + 
 							                "\"correo\":\"" + correoUsuario +"\"," + 
 							                "\"contrasena\":\"" + contrasenaUsuario + "\"" +
-							                "}";
+							                "}";*/
+					
+					jsonResult = "{\"status\":\"success\"}";
 					 System.out.println(jsonResult);
 					con.close();
 					
@@ -117,7 +119,11 @@ public class AgregarUsuario extends HttpServlet {
 			try(PrintWriter out = response.getWriter()){
 				//out.print("{\"dato\": \"No que no entrabas\"}");
 				out.print(jsonResult);
+			    System.out.println(jsonResult);
+			    System.out.println(out);
 			}
+			
+			
 			
 	}
 	

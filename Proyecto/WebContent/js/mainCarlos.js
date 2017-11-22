@@ -1,17 +1,18 @@
 $(document).ready(function() {//Entra hasta que la pagina se cargó
 
-	$("button#boton2")
+	$("button#add-user")
 	//Selector
 	.on("click", //Evento a manejar
 	function(event) {
+		var estadoEmail=1;
 
 		saveName = $("input#nombre").val(); //Estamos apuntando al textarea. Devuelve un string
 		saveName = $.trim(saveName); //Función trim sirve para recortar espacios al inicio y al fin de la cadena.
 
-		saveCorreo = $("input#correo2").val(); //Estamos apuntando al textarea. Devuelve un string
+		saveCorreo = $("input#correo").val(); //Estamos apuntando al textarea. Devuelve un string
 		saveCorreo = $.trim(saveCorreo); //Función trim sirve para recortar espacios al inicio y al fin de la cadena.
 
-		saveContrasena = $("input#password").val(); //Estamos apuntando al textarea. Devuelve un string
+		saveContrasena = $("input#contrasena").val(); //Estamos apuntando al textarea. Devuelve un string
 		saveContrasena = $.trim(saveContrasena); //Función trim sirve para recortar espacios al inicio y al fin de la cadena.
 
 		var nuevaPublicacion = {
@@ -23,9 +24,27 @@ $(document).ready(function() {//Entra hasta que la pagina se cargó
 		};
 
 		//alert(nuevaPublicacion);
-		alert(nuevaPublicacion);
+		//alert(nuevaPublicacion);
+		
+		//Verificar correo:
+		
+		  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
-		if (saveName !== "" && saveCorreo !== "" && saveContrasena !== "") {
+		    if (regex.test($("input#correo").val().trim())) {
+		        console.log('Correo validado');
+
+		    } else {
+		    	
+		    	if(saveCorreo!=="")
+		    		{
+			        	alert('La direccion de correo no es valida');
+			        	estadoEmail=0;
+		    		}
+
+		    }
+
+
+		if (saveName !== "" && saveCorreo !== "" && saveContrasena !== ""&&estadoEmail!=0) {
 			console.log(saveName);
 			console.log(saveCorreo);
 			console.log(saveContrasena);
@@ -44,7 +63,9 @@ $(document).ready(function() {//Entra hasta que la pagina se cargó
 				//Servlet existe y me devolvió un JSON
 				success : function(data, textStatus, jqXHR) {
 					console.log("Si el acceso al servlet fue correcto");
-					console.log(data); //data.dato
+					setTimeout(console.log(data), 10000);
+					//console.log(data); //data.dato
+					alert("Usuario agregado correctamente");
 
 				},
 				error : function(jqXHR, textStatus, errorThrown) {
@@ -56,22 +77,23 @@ $(document).ready(function() {//Entra hasta que la pagina se cargó
 			});
 
 		} else {
-
+			if(estadoEmail!=0)
 			alert("Debes completar todos los campos para poder continuar.");
 
 		}
 
 	}); //Funcion para manejar un evento
 
-	$("button#boton1")
+	$("button#login-user")
 	//Selector
 	.on("click", //Evento a manejar
 	function(event) {
 
-		saveCorreo1 = $("input#email2").val(); //Estamos apuntando al textarea. Devuelve un string
+		saveCorreo1 = $("input#correologin").val(); //Estamos apuntando al textarea. Devuelve un string
 		saveCorreo1 = $.trim(saveCorreo1); //Función trim sirve para recortar espacios al inicio y al fin de la cadena.
+		//saveCorreo1 = utf8_encode(saveCorreo1);
 
-		saveContrasena1 = $("input#contra").val(); //Estamos apuntando al textarea. Devuelve un string
+		saveContrasena1 = $("input#contrasenalogin").val(); //Estamos apuntando al textarea. Devuelve un string
 		saveContrasena1 = $.trim(saveContrasena1); //Función trim sirve para recortar espacios al inicio y al fin de la cadena.
 
 		var nuevaPublicacion = {
@@ -82,7 +104,7 @@ $(document).ready(function() {//Entra hasta que la pagina se cargó
 		};
 
 		//alert(nuevaPublicacion);
-		alert(nuevaPublicacion);
+		//alert(nuevaPublicacion);
 
 		if (saveCorreo1 !== "" && saveContrasena1 !== "") {
 			console.log(saveCorreo1);
@@ -120,8 +142,9 @@ $(document).ready(function() {//Entra hasta que la pagina se cargó
 			});
 
 		} else {
-
-			alert("Debes completar todos los campos para poder continuar.");
+			
+			
+				alert("Debes completar todos los campos para poder continuar.");
 
 		}
 

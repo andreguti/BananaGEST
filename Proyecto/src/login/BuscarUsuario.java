@@ -101,6 +101,7 @@ public class BuscarUsuario extends HttpServlet {
 			try(PrintWriter out = response.getWriter()){
 				//out.print("{\"dato\": \"No que no entrabas\"}");
 				out.print(jsonResult);
+				System.out.println(out);
 			}
 	}
 	
